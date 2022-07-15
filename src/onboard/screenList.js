@@ -1,4 +1,3 @@
-//not used
 const screensData = [
     {
         id: 1,

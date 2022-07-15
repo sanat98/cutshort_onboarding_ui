@@ -234,10 +234,10 @@
     justify-content: center;
     align-items: flex-start;
     position: absolute;
-    left: 9vw;
+    left: 9.2vw;
     height: 80vh;
     width: 40vw;
-    opacity: .0;
+    opacity: 0;
 }
 .leftButtonContainer:hover{
     transition: opacity ease-in-out 0.6s;
@@ -246,18 +246,26 @@
 
 
 .circleLeft{
-    background-color:white;
+    background-color:rgb(255, 255, 255);
     color: rgb(183, 179, 179);
     /* opacity: .7; */
     display: flex;
-    width: 2rem;
-    padding-top: .2rem;
-    padding-bottom: .4rem;
+    width: 1.8rem;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
     justify-content: center;
-    border-radius: 1.5rem;
+    border-radius: 1.8rem;
     font-weight: 800;
     position: absolute;
 }
+/* .circleLeft:hover{
+    background-color:rgb(248, 244, 244);
+} */
+.circleLeft:active{
+    background-color:rgb(246, 240, 240);
+}
+
+
 
 .rightButtonContainer{
     /* background-color: orange; */
@@ -266,7 +274,7 @@
     justify-content: center;
     align-items: flex-end;
     position: absolute;
-    right: 9vw;
+    right: 9.2vw;
     height: 80vh;
     width: 40vw;
     opacity: 0;
@@ -283,13 +291,20 @@
     color: rgb(183, 179, 179);
     /* opacity: .7; */
     display: flex;
-    width: 2rem;
-    padding-top: .2rem;
-    padding-bottom: .4rem;
+    width: 1.8rem;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
     justify-content: center;
-    border-radius: 1.5rem;
+    border-radius: 1.8rem;
     font-weight: 800;
     position: absolute;
     left: 100
    
+}
+.circleRight:active{
+    background-color:rgb(246, 240, 240);
+}
+
+.circleRight img{
+    transform: rotate(180deg);
 }
