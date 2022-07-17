@@ -1,15 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Head from '../components/Head';
 import '../stylesAll.css'
+import { useStateContext } from '../context/ContextProvider'
 
-export default function Screen1({direction}) {
+export default function Screen1({ direction }) {
+    const { setActivePageNumber, setDirection, } = useStateContext();
+    const [name, setName] = useState("");
+
+    const handleSubmit = () => {
+        setActivePageNumber(1);
+        setDirection('right');
+        window.localStorage.setItem('fullName', name);
+    }
 
     return (
         <div className={direction === "left" ? 'containerSlideLeft' : 'containerSlideRight'}>
             <div className='subContainerSlide'>
                 <div className='subConatinerSlideTop'>
                     <div className='subConatinerSlideTopItem'>
-                        <Head/>
+                        <Head />
                     </div>
                     <div className='subConatinerSlideTopItem'>
                         <div className='circleDark'>1</div>
@@ -33,19 +42,27 @@ export default function Screen1({direction}) {
                     </div>
 
                     <div className='subConatinerSlideTopItem'>
-                        <div className='inputsContainer'>
-                            <div className='inputSubContainer'>
-                                <label for='name'>Full Name</label>
-                                <input id="name" placeholder='Steve Jobs'></input>
+                        <form onSubmit={handleSubmit}>
+                            <div className='inputsContainer'>
+                                <div className='inputSubContainer'>
+                                    <label for='name'>Full Name</label>
+                                    <input
+                                        id="name"
+                                        placeholder='Steve Jobs'
+                                        required
+                                        value={name}
+                                        onChange={(e)=> setName(e.target.value)}
+                                        />
+                                </div>
+                                <div className='inputSubContainer'>
+                                    <label for='email'>Display Name</label>
+                                    <input id="email" placeholder='Steve' required></input>
+                                </div>
+                                <div className='inputSubContainer'>
+                                    <button type='submit'>Create Workspace</button>
+                                </div>
                             </div>
-                            <div className='inputSubContainer'>
-                                <label for='email'>Display Name</label>
-                                <input id="email" placeholder='Steve'></input>
-                            </div>
-                            <div className='inputSubContainer'>
-                                 <button>Create Workspace</button>
-                            </div>
-                        </div>
+                        </form>
 
                     </div>
                 </div>

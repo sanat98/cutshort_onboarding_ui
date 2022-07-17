@@ -15,11 +15,12 @@
 
 /* main css */
 .containerMain{
- background-color: rgb(207, 219, 231);
+ background-color: rgb(211, 220, 229);
  min-height: 100vh;
  display: flex;
  justify-content: center;
  align-items: center;
+ overflow: hidden; /* Hide scrollbars */
 }
 .containerSlideRight{
     background-color: white;
@@ -27,7 +28,7 @@
     height: 80vh;
     display: flex;
     justify-content: center;
-    animation: .4s slide-right;
+    animation: .6s slide-right;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 @keyframes slide-right {
@@ -45,15 +46,17 @@
     height: 80vh;
     display: flex;
     justify-content: center;
-    animation: .4s slide-left;
+    animation: .6s slide-left;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    
+    
 }
 @keyframes slide-left {
     from {
-      margin-left: -10%;
+      margin-left: 90%;
     }
     to {
-      margin-left: -110%;
+      margin-left: 0%;
     }
   }
 
@@ -147,6 +150,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    z-index: 5;
 }
 .inputSubContainer{
     display: flex;
@@ -157,6 +161,7 @@
 .inputsContainer label{
     font-size: .7rem;
     font-weight: bold;
+    color: rgb(73, 69, 69);
 }
 .inputsContainer label span{
     font-size: .7rem;
@@ -203,18 +208,20 @@
     background-color: aqua;
 } */
 .cardContainer{
-    border: 1px solid rgb(204, 201, 201);
+    /* border: 1px solid rgb(204, 201, 201); */
     padding: .5rem;
     font-size: .5rem;
     border-radius: .2rem;
     margin: .2rem;
 }
 .cardContainer:hover{
-    border: 1px solid indigo;
+    /* border: 1px solid indigo; */
+    background-color: rgb(247, 243, 243);
     padding: .5rem;
     font-size: .5rem;
     border-radius: .2rem;
     margin: .2rem;
+    cursor: pointer;
 }
 .cardHead{
     font-size: .6rem;
@@ -264,8 +271,6 @@
 .circleLeft:active{
     background-color:rgb(246, 240, 240);
 }
-
-
 
 .rightButtonContainer{
     /* background-color: orange; */

@@ -1,11 +1,13 @@
+import { ContextProvider } from "./onboard/context/ContextProvider";
 import MainScreen from "./onboard/MainScreen";
 
 
-function App() {
+const App=()=> {
   return (
-    <div className="App">
+    <>
       <MainScreen/>
-    </div>
+      </>
+  
   );
 }
 

@@ -1,8 +1,15 @@
 import React from 'react';
 import Head from '../components/Head';
 import '../stylesAll.css'
+import { useStateContext } from '../context/ContextProvider'
 
 export default function Screen2({direction}) {
+    const { setActivePageNumber, setDirection, } = useStateContext();
+    const handleSubmit = () => {
+        setActivePageNumber(2);
+        setDirection('right');
+    }
+
     return (
         <div className={direction === "left" ? 'containerSlideLeft' : 'containerSlideRight'}>
             <div className='subContainerSlide'>
@@ -33,17 +40,19 @@ export default function Screen2({direction}) {
 
                     <div className='subConatinerSlideTopItem'>
                         <div className='inputsContainer'>
+                            <form onSubmit={handleSubmit}>
                             <div className='inputSubContainer'>
                                 <label for='name'>Workspace Name</label>
-                                <input id="name" placeholder='Eden'></input>
+                                <input id="name" placeholder='Eden' required></input>
                             </div>
                             <div className='inputSubContainer'>
                                 <label for='email'>Workspace URL <span>(optional)</span></label>
-                                <input type='email' id="email" placeholder='www.example.com'></input>
+                                <input type='email' id="email" placeholder='www.example.com' required></input>
                             </div>
                             <div className='inputSubContainer'>
-                                 <button>Create Workspace</button>
+                                 <button type='submit' >Create Workspace</button>
                             </div>
+                            </form>
                         </div>
 
                     </div>

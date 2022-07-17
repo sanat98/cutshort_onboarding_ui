@@ -3,6 +3,7 @@ import Head from '../components/Head';
 import '../stylesAll.css'
 
 export default function Screen4({direction}) {
+    const name = window.localStorage.getItem('fullName');
     return (
         <div className={direction === "left" ? 'containerSlideLeft' : 'containerSlideRight'}>
             <div className='subContainerSlide'>
@@ -34,7 +35,7 @@ export default function Screen4({direction}) {
 
                     <div className='subConatinerSlideTopItem'>
                         <div className='headContainer'>
-                            <div className='boldText'> Congratulations, Eden! </div>
+                            <div className='boldText'> Congratulations, {name}! </div>
                             <div className='headSubInfo'>You have completed onboarding, you can start using the Eden!</div>
                         </div>
                         
